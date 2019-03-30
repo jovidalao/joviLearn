@@ -11,7 +11,10 @@ public class UDPSender {
         DatagramPacket dp = new DatagramPacket(by,by.length, InetAddress.getLocalHost(),12345);
         //把数据包放入收发器
         ds.send(dp);
+
         System.out.println("done");
+
+        ds.close();
     }
 
 }
