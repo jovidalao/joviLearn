@@ -9,7 +9,7 @@ public class Demo3 extends Thread{
     @Override
     public void run(){
         for(int i = 0;i < 30; i++){
-            System.out.println("线程任务中的"+i);
+            System.out.println("this is Thread method" + i);
         }
     }
 

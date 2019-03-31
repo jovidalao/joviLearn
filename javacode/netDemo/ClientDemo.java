@@ -16,17 +16,16 @@ public class ClientDemo {
          * b.自动进行三次握手,建立连接
          * c.自动为连接中创建两个流
          */
-        Socket client = new Socket("127.0.0.1",9909);
         while (true) {
+            Socket client = new Socket("127.0.0.1",9909);
             Scanner sc = new Scanner(System.in);
             System.out.println("输入要发送的数据");
             String msg = sc.nextLine();
             client.getOutputStream().write(msg.getBytes());
             System.out.println("给服务器端发送数据成功");
-
+            client.close();
         }
         //最后不要忘记了关闭资源
-        //client.close();
     }
     public static void file() throws IOException{
         //主要是在服务器端做多次循环接收
@@ -52,5 +51,6 @@ public class ClientDemo {
     }
     public static void main(String[] args) throws IOException {
         file();
+        //text();
     }
 }
